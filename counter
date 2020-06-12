@@ -1,0 +1,31 @@
+def isEqual(x, y):
+    return x == y
+
+
+# Converts an integer into array of integer digits
+def intToList(num):
+    return [int(x) for x in str(num)]
+
+
+def times(incidences):
+    if incidences == 1:
+        return "time"
+    else:
+        return "times"
+
+
+def main():
+    incidences = 0
+    digit = int(input("Digit: "))
+    initial = int(input("Initial: "))
+    final = int(input("Final: "))
+    for n in range(initial, final + 1):
+        array = intToList(n)
+        for num in array:
+            if isEqual(num, digit):
+                incidences = incidences + 1
+    print("Digit", digit, "repeats", incidences, times(incidences), "between", initial, "and", final)
+
+
+if __name__ == "__main__":
+    main()
